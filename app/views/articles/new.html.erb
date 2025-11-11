@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>New Article</h1>
+  <%= link_to 'Back to Articles', articles_path, class: "btn btn-outline-secondary" %>
+</div>
+<%= render 'form', article: @article %>

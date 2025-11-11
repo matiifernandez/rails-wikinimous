@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-between align-items-center m-4">
+  <h1>Wikinimous Articles 📚</h1>
+  <%= link_to 'New Article', new_article_path, class: 'btn btn-primary' %>
+</div>
+<div class="list-group">
+
+  <% @articles.each do |article| %>
+    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      <%= link_to article.title, article_path(article), class: "fs-5 text-decoration-none" %>
+      <div class="d-flex">
+        <%= link_to edit_article_path(article), class: "btn btn-sm btn-outline-info me-2" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete '#{article.title}'?" }, class: "btn btn-sm btn-outline-danger" do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

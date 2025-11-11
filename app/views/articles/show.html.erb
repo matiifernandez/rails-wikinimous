@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between align-items-center m-4">
+  <h1 class="display-4"><%= @article.title %></h1>
+  <div>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary me-2' %>
+    <%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+
+    </div>
+</div>
+
+<div class="card p-4 mb-4">
+  <p class="lead"><%= @article.content %></p>
+</div>
+
+<%= link_to 'Back to Articles', articles_path, class: 'btn btn-outline-secondary m-2' %>
